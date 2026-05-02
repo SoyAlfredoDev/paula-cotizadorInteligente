@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand Colors */
+  --color-primary: #01c676; /* Verde vibrante (Botones y acentos) */
+  --color-secondary: #094fd1; /* Azul institucional (Chat y links) */
+  --color-navy: #021f41; /* Azul oscuro (Encabezados y texto principal) */
+
+  /* Text Colors */
+  --color-text-main: #021f41; /* Texto títulos (Basado en Navy) */
+  --color-text-muted: #4b5563; /* Texto de cuerpo y descripción */
+  --color-text-white: #ffffff; /* Texto sobre fondos oscuros o primarios */
+
+  /* Backgrounds & Surface */
+  --color-bg-site: #ffffff; /* Fondo general */
+  --color-bg-soft: #f8fafc; /* Fondo de secciones o cards secundarias */
+
+  /* Borders & Interactive */
+  --color-border: #e5e7eb; /* Bordes de cards e inputs */
+  --color-shadow: rgba(0, 0, 0, 0.05); /* Sombra suave para elevación */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Background Utility Classes */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-navy {
+  background-color: var(--color-navy);
+}
+.bg-soft {
+  background-color: var(--color-bg-soft);
+}
+.bg-white {
+  background-color: var(--color-bg-site);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Text Utility Classes */
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-navy {
+  color: var(--color-navy);
+}
+.text-main {
+  color: var(--color-text-main);
+}
+.text-muted {
+  color: var(--color-text-muted);
+}
+.text-white {
+  color: var(--color-text-white);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Border Utility Classes */
+.border-primary {
+  border: 1px solid var(--color-primary);
+}
+.border-secondary {
+  border: 1px solid var(--color-secondary);
+}
+.border-light {
+  border: 1px solid var(--color-border);
+}
+
+/* Ring/Focus Utility Classes (Useful for accessible buttons) */
+.ring-primary {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
