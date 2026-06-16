@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { buildRootMetadata } from "@/src/lib/seo/metadata";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -16,11 +17,7 @@ const inter = Inter({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Cotizador Inteligente — Compara Planes de Isapre en Chile | Elige mejor, paga lo justo",
-  description:
-    "Compara las 7 principales Isapres de Chile en un solo lugar. Encuentra mejores coberturas, ahorra hasta un 30% y recibe asesoría experta 100% gratuita.",
-};
+export const metadata: Metadata = buildRootMetadata();
 
 export default function RootLayout({
   children,
@@ -29,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="es"
+      lang="es-CL"
       className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-bg-site font-sans">
